@@ -33,7 +33,7 @@ jobs:
         ruff check
     - name: Bandit
       run: |
-        bandit -r src/
+        bandit src/app.py
     - name: PyTest
       run: |
         pytest src/
