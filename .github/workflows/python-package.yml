@@ -9,14 +9,17 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  PYTHON_VERSIONS: ["3.9", "3.10", "3.11"]
+
 jobs:
-  build:
+  syntax-check:
 
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ${{ env.PYTHON_VERSIONS }}
 
     steps:
     - uses: actions/checkout@v4
@@ -31,9 +34,47 @@ jobs:
     - name: Ruff
       run: |
         ruff check
-    - name: Bandit
+
+  tests:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ${{ env.PYTHON_VERSIONS }}
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
       run: |
-        bandit src/app.py
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt
     - name: PyTest
       run: |
         pytest src/
+
+  security-scan:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ${{ env.PYTHON_VERSIONS }}
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt
+    - name: Bandit
+      run: |
+        bandit src/app.py
