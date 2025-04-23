@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 env:
-  PYTHON_VERSIONS: ["3.9", "3.10", "3.11"]
+  PYTHON_VERSIONS: '["3.9", "3.10", "3.11"]'
 
 jobs:
   syntax-check:
@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ${{ env.PYTHON_VERSIONS }}
+        python-version: ${{ fromJson(env.PYTHON_VERSIONS) }}
 
     steps:
     - uses: actions/checkout@v4
@@ -41,7 +41,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ${{ env.PYTHON_VERSIONS }}
+        python-version: ${{ fromJson(env.PYTHON_VERSIONS) }}
 
     steps:
     - uses: actions/checkout@v4
@@ -63,7 +63,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ${{ env.PYTHON_VERSIONS }}
+        python-version: ${{ fromJson(env.PYTHON_VERSIONS) }}
 
     steps:
     - uses: actions/checkout@v4
