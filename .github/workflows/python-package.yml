@@ -30,10 +30,10 @@ jobs:
         python -m pip install -r requirements.txt
     - name: Ruff
       run: |
-        echo "Ruff"
+        ruff check
     - name: Bandit
       run: |
-        echo "Bandit"
+        bandit -r src/
     - name: PyTest
       run: |
-        echo "PyTest"
+        pytest src/
