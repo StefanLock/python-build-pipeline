@@ -53,6 +53,10 @@ jobs:
     - name: PyTest
       run: |
         pytest --cov=app src --junitxml=junit/test-results.xml
+    - name: Publish Test Results for ${{ matrix.python-version }}
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      with:
+        files: junit/test-results.xml
     - name: Upload Test Results
       uses: actions/upload-artifact@v4
       with:
