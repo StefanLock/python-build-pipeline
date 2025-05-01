@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.5...v1.0.6) (2025-05-01)
+
+
+### Bug Fixes
+
+* remove debug output ([9d1dbea](https://github.com/StefanLock/python-build-pipeline/commit/9d1dbeaacc97a7e94dd5acbf635d7ab37b9b8847))
+
 ## [1.0.5](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.4...v1.0.5) (2025-05-01)
 
 
