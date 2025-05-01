@@ -150,9 +150,10 @@ jobs:
           LATEST_IMAGE_TAG="ghcr.io/${REPOSITORY_LOWERCASE}/demo-flask-app:latest"
 
           docker build -t "${IMAGE_TAG}" -f Dockerfile .
-          echo "IMAGE_TAG=${IMAGE_TAG}" >> $GITHUB_ENV # Export for the next step
+          echo "IMAGE_TAG=${IMAGE_TAG}" >> $GITHUB_ENV
 
           docker build -t "${LATEST_IMAGE_TAG}" -f Dockerfile .
+          echo "LATEST_IMAGE_TAG=${LATEST_IMAGE_TAG}" >> $GITHUB_ENV # Export for the next step
 
       - name: Push Docker Image
         run: |
@@ -160,4 +161,4 @@ jobs:
           docker push "${{ env.IMAGE_TAG }}"
           
           REPOSITORY_LOWERCASE=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
-          docker push "ghcr.io/${REPOSITORY_LOWERCASE}/demo-flask-app:latest"
+          docker push ""${{ env.LATEST_IMAGE_TAG }}""
