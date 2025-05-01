@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.6...v1.0.7) (2025-05-01)
+
+
+### Bug Fixes
+
+* will come bak to token failure but it's blocking the pipeline at the moment ([3b1b153](https://github.com/StefanLock/python-build-pipeline/commit/3b1b1533295a88f316828b5737b15671b4f384a0))
+
 ## [1.0.6](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.5...v1.0.6) (2025-05-01)
 
 
