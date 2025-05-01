@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.2...v1.0.3) (2025-05-01)
+
+
+### Bug Fixes
+
+* need to add a fix so it generates a new version ([947fcdf](https://github.com/StefanLock/python-build-pipeline/commit/947fcdf6eb8f5ff18ba63b80b6ab83eac88b9a88))
+
 ## [1.0.2](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.1...v1.0.2) (2025-05-01)
 
 
