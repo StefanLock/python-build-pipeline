@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.8...v1.0.9) (2025-05-01)
+
+
+### Bug Fixes
+
+* standardising image build and tag approach for both latest and versioned images ([3f819fd](https://github.com/StefanLock/python-build-pipeline/commit/3f819fdd6ef602e09ff4834850bf733839b0ca67))
+
 ## [1.0.8](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.7...v1.0.8) (2025-05-01)
 
 
