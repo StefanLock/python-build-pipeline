@@ -5,9 +5,9 @@ name: Python package
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "develop" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "develop" ]
 
 jobs:
   syntax-check:
@@ -147,7 +147,7 @@ jobs:
           REPOSITORY_LOWERCASE=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
           VERSION="${{ needs.release.outputs.release_version }}"
           IMAGE_TAG="ghcr.io/${REPOSITORY_LOWERCASE}/demo-flask-app:${VERSION}"
-          
+
           docker build -t "${IMAGE_TAG}" -f Dockerfile .
           echo "IMAGE_TAG=${IMAGE_TAG}" >> $GITHUB_ENV # Export for the next step
 
