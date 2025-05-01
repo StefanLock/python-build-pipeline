@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.1...v1.0.2) (2025-05-01)
+
+
+### Bug Fixes
+
+* troubleshooting version being blank ([ab36dc4](https://github.com/StefanLock/python-build-pipeline/commit/ab36dc4af3ea02269c989e6bca83d50ea9a174ff))
+
 ## [1.0.1](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.0...v1.0.1) (2025-05-01)
 
 
