@@ -88,11 +88,41 @@ jobs:
     - name: Bandit
       run: |
         bandit src/app.py
-  
+
+  release:
+    runs-on: ubuntu-latest
+    outputs:
+      release_version: ${{ steps.get_version.outputs.new_release }}
+    needs: [tests, syntax-check, security-scan]
+    permissions:
+      contents: write # to be able to publish a new release
+      packages: write # to be able to publish package
+      pull-requests: write # to create pull requests
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # important for semantic-release to analyze commits
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install semantic-release dependencies
+        run: npm install semantic-release @semantic-release/changelog @semantic-release/git --save-dev
+      - name: Get Semantic Version
+        id: get_version
+        run: |
+          VERSION=$(npx semantic-release --dry-run --no-ci | grep "The next release version is" | awk '{print $5}')
+          echo "::set-output name=new_release::$VERSION"
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
+
   build-and-push:
     runs-on: ubuntu-latest
 
-    needs: [tests, syntax-check, security-scan]
+    needs: [release]
 
     permissions:
       contents: read
@@ -115,9 +145,14 @@ jobs:
       - name: Build Docker Image
         run: |
           REPOSITORY_LOWERCASE=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
-          docker build -t "ghcr.io/${REPOSITORY_LOWERCASE}/demo-flask-app" -f Dockerfile .
+          VERSION="${{ needs.release.outputs.release_version }}"
+          IMAGE_TAG="ghcr.io/${REPOSITORY_LOWERCASE}/demo-flask-app:${VERSION}"
+          
+          docker build -t "${IMAGE_TAG}" -f Dockerfile .
+          echo "IMAGE_TAG=${IMAGE_TAG}" >> $GITHUB_ENV # Export for the next step
 
       - name: Push Docker Image
         run: |
-          REPOSITORY_LOWERCASE=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
-          docker push "ghcr.io/${REPOSITORY_LOWERCASE}/demo-flask-app:latest"
+          echo "Pushing image: $IMAGE_TAG"
+          docker push "${{ env.IMAGE_TAG }}"
+          docker push "ghcr.io/${{ github.repository_owner }}/$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')/demo-flask-app:latest" # Still push latest
