@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.3...v1.0.4) (2025-05-01)
+
+
+### Bug Fixes
+
+* looks like the number is off but testing it a sec ([54e8652](https://github.com/StefanLock/python-build-pipeline/commit/54e8652043c4f2cde2d8cec5a434351d93c4abc3))
+
 ## [1.0.3](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.2...v1.0.3) (2025-05-01)
 
 
