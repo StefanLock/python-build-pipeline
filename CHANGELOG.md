@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.7...v1.0.8) (2025-05-01)
+
+
+### Bug Fixes
+
+* forgot to tag the latest image ([97bb2c1](https://github.com/StefanLock/python-build-pipeline/commit/97bb2c1651a2bb53338753ee40c3d9df93c6df1c))
+
 ## [1.0.7](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.6...v1.0.7) (2025-05-01)
 
 
