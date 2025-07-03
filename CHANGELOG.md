@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.12...v1.0.13) (2025-07-03)
+
+
+### Bug Fixes
+
+* troubleshooting token error ([cb7fbbc](https://github.com/StefanLock/python-build-pipeline/commit/cb7fbbc8f4a11fdd73422947b8b5c2cd3e3aa6ca))
+
 ## [1.0.12](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.11...v1.0.12) (2025-07-03)
 
 
