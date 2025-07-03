@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.10...v1.0.11) (2025-07-03)
+
+
+### Bug Fixes
+
+* re-introducing the github release plugin ([d21b3c4](https://github.com/StefanLock/python-build-pipeline/commit/d21b3c4bf26dae9a4d91d799c5668858479d1f4a))
+
 ## [1.0.10](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.9...v1.0.10) (2025-07-03)
 
 
