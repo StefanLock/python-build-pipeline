@@ -111,6 +111,8 @@ jobs:
         run: npm install semantic-release @semantic-release/changelog @semantic-release/git --save-dev
       - name: Get Semantic Version
         id: get_version
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION=$(npx semantic-release --dry-run --no-ci | grep "The next release version is" | awk '{print $11}')
           echo "new_release=$VERSION" >> $GITHUB_OUTPUT
