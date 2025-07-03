@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.9...v1.0.10) (2025-07-03)
+
+
+### Bug Fixes
+
+* updating eol code ([c860b85](https://github.com/StefanLock/python-build-pipeline/commit/c860b85d25ec91da1997f859dc50b83759f23862))
+
 ## [1.0.9](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.8...v1.0.9) (2025-05-01)
 
 
