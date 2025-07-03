@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.11...v1.0.12) (2025-07-03)
+
+
+### Bug Fixes
+
+* quick test to make sure plugin works ([a4636b3](https://github.com/StefanLock/python-build-pipeline/commit/a4636b3a25da06f03a7d43fb1ed0dce2c25aaab5))
+
 ## [1.0.11](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.10...v1.0.11) (2025-07-03)
 
 
