@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.13...v1.1.0) (2025-07-03)
+
+
+### Features
+
+* Merge branch 'develop' of github.com:StefanLock/python-build-pipeline into develop ([17daa45](https://github.com/StefanLock/python-build-pipeline/commit/17daa459f00efd7b0e5a24918d0233ce6d7491fc))
+* Updating the Documentation to close out this code for now ([773db27](https://github.com/StefanLock/python-build-pipeline/commit/773db27974bcd5ec2c1b5283e6261623b73322e6))
+
 ## [1.0.13](https://github.com/StefanLock/python-build-pipeline/compare/v1.0.12...v1.0.13) (2025-07-03)
 
 
